@@ -1,0 +1,22 @@
+{
+  "name": "react-scripts-facade",
+  "version": "0.1.0",
+  "description": "Extract of wmonk/create-react-app-typescript/ react-scripts/scripts and react-scripts/bin folders.",
+  "main": "index.js",
+  "bin": {
+    "react-scripts-facade": "react-scripts-ts.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://github.com/Realytics/react-scripts-facade.git",
+  "author": "Etienne Dldc <etienne.dldc@outlook.fr>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Realytics/react-scripts-facade/issues"
+  },
+  "homepage": "https://github.com/Realytics/react-scripts-facade#readme",
+  "dependencies": {
+    "react-scripts-ts": "^2.8.0"
+  }
+}
