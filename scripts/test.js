@@ -21,7 +21,7 @@ process.on('unhandledRejection', err => {
 });
 
 // Ensure environment variables are read.
-require('../config/env');
+require('react-scripts-ts/config/env');
 
 const jest = require('jest');
 const argv = process.argv.slice(2);
@@ -35,7 +35,7 @@ if (!process.env.CI && argv.indexOf('--coverage') < 0) {
 // This is not necessary after eject because we embed config into package.json.
 const createJestConfig = require('./utils/createJestConfig');
 const path = require('path');
-const paths = require('../config/paths');
+const paths = require('react-scripts-ts/config/paths');
 argv.push(
   '--config',
   JSON.stringify(
