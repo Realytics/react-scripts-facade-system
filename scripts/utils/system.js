@@ -7,6 +7,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const paths = require('react-scripts-ts/config/paths');
 
+// Allow ENTRY_FILE env
+const ENTRY_FILE = process.env.ENTRY_FILE ? path.resolve(paths.appPath, process.env.ENTRY_FILE) : paths.appIndexJs;
+
 function findEntries() {
   const packageJson = require(path.resolve(paths.appPath, 'package.json'));
   const entryDir = path.resolve(paths.appPath, packageJson.entryDir ? packageJson.entryDir : 'src/entries');
@@ -34,7 +37,7 @@ module.exports = function transformWebpackConfig(config, isProd) {
   // Add entries
   config.entry = Object.assign(
     {
-      main: config.entry,
+      main: config.entry.slice(0, -1).push(ENTRY_FILE),
     },
     Object.keys(entries).reduce((acc, bundle) => {
       acc[bundle] = [require.resolve('react-dev-utils/webpackHotDevClient'), entries[bundle]];
