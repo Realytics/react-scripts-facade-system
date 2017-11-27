@@ -1,6 +1,6 @@
 {
   "name": "@realytics/react-scripts-facade-system",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Extract of wmonk/create-react-app-typescript/ react-scripts/scripts and react-scripts/bin folders.",
   "main": "index.js",
   "bin": {
