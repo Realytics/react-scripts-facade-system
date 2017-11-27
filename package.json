@@ -4,7 +4,7 @@
   "description": "Extract of wmonk/create-react-app-typescript/ react-scripts/scripts and react-scripts/bin folders.",
   "main": "index.js",
   "bin": {
-    "react-scripts-facade": "react-scripts-ts.js"
+    "react-scripts-facade": "./bin/react-scripts-ts.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
