@@ -37,7 +37,7 @@ module.exports = function transformWebpackConfig(config, isProd) {
   // Add entries
   config.entry = Object.assign(
     {
-      main: config.entry.slice(0, -1).push(ENTRY_FILE),
+      main: config.entry.slice(0, -1).concat([ENTRY_FILE]),
     },
     Object.keys(entries).reduce((acc, bundle) => {
       acc[bundle] = [require.resolve('react-dev-utils/webpackHotDevClient'), entries[bundle]];
