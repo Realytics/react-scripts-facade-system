@@ -10,7 +10,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Etienne Dldc <etienne.dldc@outlook.fr>",
-  "license": "ISC",
   "dependencies": {
     "klaw-sync": "^3.0.2",
     "react-scripts-ts": "2.8.0",
@@ -22,6 +21,7 @@
     "type": "git",
     "url": "git+https://github.com/Realytics/react-scripts-facade-system.git"
   },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Realytics/react-scripts-facade-system/issues"
   },
