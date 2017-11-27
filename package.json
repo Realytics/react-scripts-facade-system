@@ -11,7 +11,7 @@
   },
   "repository": "git+https://github.com/Realytics/react-scripts-facade.git",
   "author": "Etienne Dldc <etienne.dldc@outlook.fr>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Realytics/react-scripts-facade/issues"
   },
