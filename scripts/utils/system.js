@@ -9,6 +9,7 @@ const paths = require('react-scripts-ts/config/paths');
 
 // Allow ENTRY_FILE env
 const ENTRY_FILE = process.env.ENTRY_FILE ? path.resolve(paths.appPath, process.env.ENTRY_FILE) : paths.appIndexJs;
+const OUTPUT_DIR = process.env.OUTPUT_DIR ? path.resolve(paths.appPath, process.env.OUTPUT_DIR) : paths.appBuild;
 
 function findEntries() {
   const packageJson = require(path.resolve(paths.appPath, 'package.json'));
@@ -40,10 +41,15 @@ module.exports = function transformWebpackConfig(config, isProd) {
       main: config.entry.slice(0, -1).concat([ENTRY_FILE]),
     },
     Object.keys(entries).reduce((acc, bundle) => {
-      acc[bundle] = [require.resolve('react-dev-utils/webpackHotDevClient'), entries[bundle]];
+      acc[bundle] = [
+        // require.resolve('react-dev-utils/webpackHotDevClient'),
+        entries[bundle],
+      ];
       return acc;
     }, {})
   );
+
+  config.output.path = OUTPUT_DIR;
 
   config.output.library = 'Bundle';
   if (isProd) {
