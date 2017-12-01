@@ -34,14 +34,14 @@ const paths = require('react-scripts-ts/config/paths');
 const originalConfig = require('react-scripts-ts/config/webpack.config.dev');
 const createDevServerConfig = require('react-scripts-ts/config/webpackDevServer.config');
 // custom transform
-const transformWebpackConfig = require('./utils/system');
-const config = transformWebpackConfig(originalConfig, false);
+const systemTools = require('./utils/system');
+const config = systemTools.transformWebpackConfig(originalConfig, false);
 
 const useYarn = fs.existsSync(paths.yarnLockFile);
 const isInteractive = process.stdout.isTTY;
 
 // Warn and crash if required files are missing
-if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
+if (!checkRequiredFiles([paths.appHtml, systemTools.ENTRY_FILE])) {
   process.exit(1);
 }
 

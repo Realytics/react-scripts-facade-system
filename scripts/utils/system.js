@@ -32,7 +32,7 @@ function findEntries() {
     }, {});
 }
 
-module.exports = function transformWebpackConfig(config, isProd) {
+function transformWebpackConfig(config, isProd) {
   const entries = findEntries();
 
   // Add entries
@@ -105,4 +105,10 @@ module.exports = function transformWebpackConfig(config, isProd) {
   }
 
   return config;
+}
+
+module.exports = {
+  transformWebpackConfig: transformWebpackConfig,
+  ENTRY_FILE: ENTRY_FILE,
+  OUTPUT_DIR: OUTPUT_DIR,
 };
